@@ -117,6 +117,18 @@ body.light-mode {
   background: linear-gradient(to bottom, #396f85, #0e85ad);
   color: #333;
 }
+/* Footer Styling */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color:  #18292f; /* Light background (change for dark mode if needed) */
+  font-weight: bold;
+  font-size: 16px;
+  color: white; /* Text color */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
 
 body.light-mode .highlight,
 body.light-mode .forecast-day {
