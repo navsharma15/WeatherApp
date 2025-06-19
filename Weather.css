@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 900px;
+  margin: 35px auto 20px auto;
+  padding: 20px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* Mode Toggle */
+.mode-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-weight: bold;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  padding: 10px;
+  width: 60%;
+  font-size: 16px;
+  border: 1px solid #1e90ff;
+  border-radius: 8px 0 0 8px;
+}
+
+.search-box button {
+  padding: 10px;
+  background-color: #1e90ff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Weather Info */
+.weather-info {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Highlights */
+.highlights {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  font-weight: bold;
+}
+
+.highlight {
+  padding: 20px;
+  border-radius: 12px;
+  margin: 10px;
+  flex: 1 1 200px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Forecast */
+.forecast {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.forecast-day {
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px;
+  flex: 1 1 120px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Map */
+#map {
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Light Mode */
+body.light-mode {
+  background: linear-gradient(to bottom, #396f85, #0e85ad);
+  color: #333;
+}
+
+body.light-mode .highlight,
+body.light-mode .forecast-day {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: linear-gradient(to bottom, #0b0c2a, #1c1f3b);
+  color: white;
+}
+
+body.dark-mode .highlight,
+body.dark-mode .forecast-day {
+  background-color: rgba(31, 42, 71, 0.9);
+}

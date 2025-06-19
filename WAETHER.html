@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="Weather.css" />
+</head>
+<body class="light-mode">
+  <div class="logo">
+    <img src="https://cdn-icons-png.flaticon.com/512/1163/1163661.png" alt="CloudDotit Logo" />
+    <span>CloudDotit</span>
+  </div>
+
+  <div class="mode-toggle">
+    <label>
+      <input type="checkbox" id="modeSwitch" /> Toggle Dark Mode
+    </label>
+  </div>
+
+  <div class="container">
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Search for places" />
+      <button onclick="getWeather()">Search</button>
+    </div>
+
+    <div class="weather-info">
+      <h1 id="temperature">-- °C</h1>
+      <p id="description"><b>--</b></p>
+      <p id="location"><b>--</b></p>
+      <p id="date"><b>--</b></p>
+    </div>
+
+    <div class="highlights">
+      <div class="highlight" id="wind">Wind: -- kph</div>
+      <div class="highlight" id="humidity">Humidity: --%</div>
+      <div class="highlight" id="visibility">Visibility: -- km</div>
+      <div class="highlight" id="pressure">Air Pressure: -- mb</div>
+    </div>
+
+    <div class="forecast" id="forecast">
+      <!-- Forecast will be inserted here -->
+    </div>
+
+    <div id="map"></div>
+  </div>
+
+  <script src="Script.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZnGC12q3HySF2C67Oi8VigT5e_VUzwC4"></script>
+</body>
+</html>
