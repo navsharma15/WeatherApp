@@ -21,10 +21,10 @@
     <span>CloudDotit</span>
   </div>
 
-  <!-- Dark/Light Mode Toggle -->
+  <!-- Mode Toggle -->
   <div class="mode-toggle">
     <label>
-      <input type="checkbox" id="modeSwitch" />Mode
+      <input type="checkbox" id="modeSwitch" /> Mode
     </label>
   </div>
 
@@ -32,8 +32,8 @@
   <div class="container">
     <!-- Search -->
     <div class="search-box">
-      <input type="text" id="cityInput" placeholder="Search for places" />
-      <button onclick="getWeather()">Search</button>
+      <input type="text" id="cityInput" placeholder="Search for places (eg. London)" />
+      <button id="searchBtn">Search</button>
     </div>
 
     <!-- Weather Info -->
@@ -52,7 +52,14 @@
       <div class="highlight" id="pressure">Air Pressure: -- mb</div>
     </div>
 
-    <!-- Forecast -->
+    <!-- Hourly Forecast (6 visible at once; responsive) -->
+    <section class="hourly-forecast-wrapper">
+      <button class="hourly-nav left" id="hourLeft" aria-label="Scroll left">&#10094;</button>
+      <div class="hourly-forecast" id="hourlyScroll" role="list" aria-label="Hourly forecast"></div>
+      <button class="hourly-nav right" id="hourRight" aria-label="Scroll right">&#10095;</button>
+    </section>
+
+    <!-- Daily Forecast -->
     <div class="forecast" id="forecast"></div>
 
     <!-- Map -->
