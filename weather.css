@@ -1,147 +1,222 @@
-/* General Styles */
+/* ===== Background Slideshow ===== */
+.bg-slideshow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+.bg-slideshow .slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideShow 20s infinite;
+  transition: opacity 2s ease-in-out;
+}
+
+/* 4 slides, each starts at different delay */
+.bg-slideshow .slide:nth-child(1) { animation-delay: 0s; }
+.bg-slideshow .slide:nth-child(2) { animation-delay: 5s; }
+.bg-slideshow .slide:nth-child(3) { animation-delay: 10s; }
+.bg-slideshow .slide:nth-child(4) { animation-delay: 15s; }
+
+@keyframes slideShow {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ===== General Styles ===== */
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
   transition: background 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .container {
-  max-width: 900px;
-  margin: 35px auto 20px auto;
+  max-width: 1100px;
+  margin: 80px auto 30px auto;
   padding: 20px;
 }
 
-/* Logo */
+/* ===== Logo ===== */
 .logo {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 10px;
-  left: 20px;
-  font-size: 20px;
+  top: 15px;
+  left: 25px;
+  font-size: 22px;
   font-weight: bold;
   color: #1e3a8a;
+  letter-spacing: 1px;
 }
-
 .logo img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   margin-right: 10px;
 }
 
-/* Mode Toggle */
+/* ===== Mode Toggle ===== */
 .mode-toggle {
   position: absolute;
-  top: 10px;
-  right: 20px;
-  font-weight: bold;
+  top: 20px;
+  right: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 14px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 
-/* Search Box */
+/* ===== Search Box ===== */
 .search-box {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
-
 .search-box input {
-  padding: 10px;
-  width: 60%;
+  padding: 12px 15px;
+  width: 65%;
   font-size: 16px;
-  border: 1px solid #1e90ff;
-  border-radius: 8px 0 0 8px;
+  border: none;
+  outline: none;
+  border-radius: 12px 0 0 12px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  color: white;
+  transition: 0.3s;
 }
-
+.search-box input::placeholder {
+  color: #d1d5db;
+}
+.search-box input:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
 .search-box button {
-  padding: 10px;
-  background-color: #1e90ff;
+  padding: 12px 20px;
+  background: #1e90ff;
   border: none;
   color: white;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 12px 12px 0;
+  transition: 0.3s;
+}
+.search-box button:hover {
+  background: #2563eb;
 }
 
-/* Weather Info */
+/* ===== Weather Info ===== */
 .weather-info {
   text-align: center;
-  margin-bottom: 30px;
-  font-weight: bold;
+  margin-bottom: 35px;
+}
+.weather-info h1 {
+  font-size: 60px;
+  margin: 10px 0;
+}
+.weather-info p {
+  font-size: 18px;
+  margin: 4px 0;
 }
 
-/* Highlights */
+/* ===== Highlights ===== */
 .highlights {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   flex-wrap: wrap;
-  font-weight: bold;
+  gap: 20px;
 }
-
 .highlight {
   padding: 20px;
-  border-radius: 12px;
-  margin: 10px;
-  flex: 1 1 200px;
+  border-radius: 16px;
+  flex: 1 1 220px;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+.highlight:hover {
+  transform: translateY(-5px);
 }
 
-/* Forecast */
+/* ===== Forecast ===== */
 .forecast {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-bottom: 35px;
+  gap: 20px;
+}
+.forecast-day {
+  padding: 18px;
+  border-radius: 14px;
+  flex: 1 1 140px;
+  text-align: center;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+.forecast-day:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Map ===== */
+#map {
+  height: 320px;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
   margin-bottom: 30px;
 }
 
-.forecast-day {
-  padding: 15px;
-  border-radius: 10px;
-  margin: 10px;
-  flex: 1 1 120px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Map */
-#map {
-  height: 300px;
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Light Mode */
+/* ===== Light Mode ===== */
 body.light-mode {
-  background: linear-gradient(to bottom, #396f85, #0e85ad);
-  color: #333;
+  color: #222;
 }
-/* Footer Styling */
-footer {
-  text-align: center;
-  padding: 20px 0;
-  background-color:  #18292f; /* Light background (change for dark mode if needed) */
-  font-weight: bold;
-  font-size: 16px;
-  color: white; /* Text color */
-  position: relative;
-  bottom: 0;
-  width: 100%;
+body.light-mode input {
+  color: #111;
 }
 
-body.light-mode .highlight,
-body.light-mode .forecast-day {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-/* Dark Mode */
+/* ===== Dark Mode ===== */
 body.dark-mode {
-  background: linear-gradient(to bottom, #0b0c2a, #1c1f3b);
-  color: white;
+  color: #f1f5f9;
 }
-
 body.dark-mode .highlight,
 body.dark-mode .forecast-day {
-  background-color: rgba(31, 42, 71, 0.9);
+  background: rgba(31, 42, 71, 0.8);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 18px 0;
+  font-weight: 500;
+  font-size: 15px;
+  color: #f1f5f9;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+  margin-top: auto;
 }

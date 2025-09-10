@@ -7,23 +7,36 @@
   <link rel="stylesheet" href="weather.css" />
 </head>
 <body class="light-mode">
+  <!-- Background Slideshow -->
+  <div class="bg-slideshow">
+    <div class="slide" style="background-image: url('https://c1.wallpaperflare.com/preview/77/581/146/thunderstorm-clouds-thundercloud-storm.jpg');"></div>
+    <div class="slide" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7WVYG1DFN-I5vjRCGUdYEtk44FzgV5yhCrn-0Zks4mW23afMOU7cJHl_Xvl7qBLVYyfQ&usqp=CAU');"></div>
+    <div class="slide" style="background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20230727/pngtree-storm-clouds-in-the-sky-image_10221097.jpg');"></div>
+    <div class="slide" style="background-image: url('https://img.resized.co/galwaybayfm-ie/eyJkYXRhIjoie1widXJsXCI6XCJodHRwczpcXFwvXFxcL2ltZy5nYWx3YXliYXlmbS5pZVxcXC9wcm9kXFxcL3VwbG9hZHNcXFwvMjAyM1xcXC8xMVxcXC9yYWluLmpwZ1wiLFwid2lkdGhcIjo4NjAsXCJoZWlnaHRcIjo0ODMsXCJkZWZhdWx0XCI6XCJodHRwczpcXFwvXFxcL2ltZy5nYWx3YXliYXlmbS5pZVxcXC9zdGFnaW5nXFxcL3VwbG9hZHNcXFwvcGxhY2Vob2xkZXIucG5nXCIsXCJvcHRpb25zXCI6e1wib3V0cHV0XCI6XCJqcGVnXCJ9fSIsImhhc2giOiIxY2QxZDUyZGYxOTA0OGEzM2EzOTMzMDFmOWIzOTkxNDllOWNmZDQ1In0=/wettest-year-on-record-at-athenry-weather-station.jpg');"></div>
+  </div>
+
+  <!-- Logo -->
   <div class="logo">
     <img src="https://cdn-icons-png.flaticon.com/512/1163/1163661.png" alt="CloudDotit Logo" />
     <span>CloudDotit</span>
   </div>
 
+  <!-- Dark/Light Mode Toggle -->
   <div class="mode-toggle">
     <label>
       <input type="checkbox" id="modeSwitch" /> Toggle Dark Mode
     </label>
   </div>
 
+  <!-- Main Container -->
   <div class="container">
+    <!-- Search -->
     <div class="search-box">
       <input type="text" id="cityInput" placeholder="Search for places" />
       <button onclick="getWeather()">Search</button>
     </div>
 
+    <!-- Weather Info -->
     <div class="weather-info">
       <h1 id="temperature">-- °C</h1>
       <p id="description"><b>--</b></p>
@@ -31,6 +44,7 @@
       <p id="date"><b>--</b></p>
     </div>
 
+    <!-- Highlights -->
     <div class="highlights">
       <div class="highlight" id="wind">Wind: -- kph</div>
       <div class="highlight" id="humidity">Humidity: --%</div>
@@ -38,16 +52,19 @@
       <div class="highlight" id="pressure">Air Pressure: -- mb</div>
     </div>
 
-    <div class="forecast" id="forecast">
-      <!-- Forecast will be inserted here -->
-    </div>
+    <!-- Forecast -->
+    <div class="forecast" id="forecast"></div>
 
+    <!-- Map -->
     <div id="map"></div>
   </div>
+
+  <!-- Footer -->
   <footer id="footer">
-    <div>MADE BY NAV SHARMA</div>
+    <div>GROUP 19</div>
   </footer>
 
+  <!-- JS -->
   <script src="script.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZnGC12q3HySF2C67Oi8VigT5e_VUzwC4"></script>
 </body>
